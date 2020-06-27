@@ -3,6 +3,7 @@ package com.patient.patient;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,18 +15,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class PatientController {
 	
+	@Autowired
+	private PatientService patientService;
+	
 	@RequestMapping("/Patients")
 	public List<Patient> getAllPatients() {
-		return Arrays.asList(
-				
-				new Patient("Pratik",19,"26 June 2020",123,"Fever"),
-				new Patient("Pratik",19,"26 June 2020",123,"Fever"),
-				new Patient("Pratik",19,"26 June 2020",123,"Fever"),
-				new Patient("Pratik",19,"26 June 2020",123,"Fever"),
-				new Patient("Pratik",19,"26 June 2020",123,"Fever"),
-				new Patient("Pratik",19,"26 June 2020",123,"Fever")
-				
-				);
+		return patientService.getAllPatients();
 	}
 	
 	   @GetMapping("/Patients-html")
