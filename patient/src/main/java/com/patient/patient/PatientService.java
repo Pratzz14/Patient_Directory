@@ -31,6 +31,21 @@ public class PatientService {
 		patient.add(Patient);
 		
 	}
+
+	public void updatePatient(String name, Patient Patient) {
+		for (int i=0; i<patient.size();i++) {
+			Patient t = patient .get(i);
+			if (t.getName().equals(name)) {
+				patient.set(i, Patient);
+				return;
+			}
+		}
+		
+	}
+
+	public void deletePatient(String name) {
+		patient.removeIf(t -> t.getName().equals(name));
+	}
 	
 	
 }

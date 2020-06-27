@@ -36,7 +36,15 @@ public class PatientController {
 		patientService.addPatient(patient);
 	}
 	
+	@RequestMapping(method=RequestMethod.PUT,value="/Patients/{name}")
+	public void updatePatient(@RequestBody Patient patient,@PathVariable String name) {
+		patientService.updatePatient(name,patient);
+	}
 	
+	@RequestMapping(method=RequestMethod.DELETE,value="/Patients/{name}")
+	public void deletePatient(@PathVariable String name) {
+		patientService.deletePatient(name);
+	}	
 	
 	   @GetMapping("/Patients-html")
 	    public ModelAndView htmlView(Model model)
