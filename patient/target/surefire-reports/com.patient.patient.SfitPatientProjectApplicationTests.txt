@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.patient.patient.SfitPatientProjectApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.717 s - in com.patient.patient.SfitPatientProjectApplicationTests

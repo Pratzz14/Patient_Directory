@@ -1,0 +1,57 @@
+package com.patient.patient;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+
+
+@RestController
+public class PatientController {
+	
+	@RequestMapping("/Patients")
+	public List<Patient> getAllPatients() {
+		return Arrays.asList(
+				
+				new Patient("Pratik",19,"26 June 2020",123,"Fever"),
+				new Patient("Pratik",19,"26 June 2020",123,"Fever"),
+				new Patient("Pratik",19,"26 June 2020",123,"Fever"),
+				new Patient("Pratik",19,"26 June 2020",123,"Fever"),
+				new Patient("Pratik",19,"26 June 2020",123,"Fever"),
+				new Patient("Pratik",19,"26 June 2020",123,"Fever")
+				
+				);
+	}
+	
+	   @GetMapping("/Patients-html")
+	    public ModelAndView htmlView(Model model)
+	  {    
+		  List<Patient> patient= Arrays.asList(
+					
+					new Patient("Pratik",19,"26 June 2020",123,"Fever"),
+					new Patient("Pratik",19,"26 June 2020",123,"Fever"),
+					new Patient("Pratik",19,"26 June 2020",123,"Fever"),
+					new Patient("Pratik",19,"26 June 2020",123,"Fever"),
+					new Patient("Pratik",19,"26 June 2020",123,"Fever"),
+					new Patient("Pratik",19,"26 June 2020",123,"Feverrrr")
+					
+					);
+
+	        ModelAndView mav = new ModelAndView();
+	        mav.addObject("patient", patient);
+	
+	        mav.setViewName("patient.html");  
+	        
+	        return mav;
+	  }
+
+	   
+	
+	
+	
+}

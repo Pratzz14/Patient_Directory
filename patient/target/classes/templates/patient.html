@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+
+
+	<style>
+    .readings{
+        background-color:#f7fbe1; 
+     }
+    h1{
+        font-size: 60px    
+    }
+    body{
+        background-color: #f7fbe1;   
+    }
+    .top{
+        background-color: #bac964; 
+        padding: 10px;
+        padding-bottom: 1px;
+    }
+    .mid{
+        background-color: #438a5e;  
+        padding: 10px;
+    }
+    .tab{
+        background-color: #bac964;            
+    }    
+	table {
+	  font-family: arial, sans-serif;
+	  border-collapse: collapse;
+	  width: 100%;
+	}
+	
+	td, th {
+	  border: 1px solid #dddddd;
+	  text-align: left;
+	  padding: 8px;
+	}
+	
+	tr:nth-child(even) {
+	  background-color: #436f8a;
+	}
+	</style>
+</head>
+
+<body>
+    <div class="top">   
+    <h1 align=center>SFIT Hospital</h1>
+    </div>
+    <div class="mid">
+    <h2 align=center>Patient details:</h2>
+    </div>
+    <hr>
+    <br><br>
+    <div class="tab">
+    <table>
+    <tr>
+	    <th>Name</th>
+	    <th>Age</th>
+	    <th>Date</th>
+	    <th>Temperature</th>
+        <th>Symptoms</th>
+    </tr>
+    </div>
+    <div class="readings"> 
+    <tr th:each="Patient: ${patient}">
+	    <td width=29% th:text="${Patient.name}"></td>
+	    <td width=10% th:text="${Patient.age}"></td>
+	    <td width=18% th:text="${Patient.date}"></td>
+	    <td width=14% th:text="${Patient.temp}"></td>
+        <td width=29% th:text="${Patient.symptoms}"></td>
+ 	</tr>
+
+    </table>
+    </div>
+        
+    
+</body>
+</html>
