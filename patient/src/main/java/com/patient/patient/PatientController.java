@@ -49,16 +49,7 @@ public class PatientController {
 	   @GetMapping("/Patients-html")
 	    public ModelAndView htmlView(Model model)
 	  {    
-		  List<Patient> patient= Arrays.asList(
-					
-					new Patient("Pratik",19,"26 June 2020",123,"Fever"),
-					new Patient("Medha",19,"26 June 2020",123,"Fever"),
-					new Patient("Janice",19,"26 June 2020",123,"Fever"),
-					new Patient("Pratik",19,"26 June 2020",123,"Fever"),
-					new Patient("Medha",19,"26 June 2020",123,"Fever"),
-					new Patient("Janice",19,"26 June 2020",123,"Feverrrr")
-					
-					);
+		  List<Patient> patient= patientService.getAllPatients();
 
 	        ModelAndView mav = new ModelAndView();
 	        mav.addObject("patient", patient);
