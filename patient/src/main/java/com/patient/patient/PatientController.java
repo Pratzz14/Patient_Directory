@@ -1,6 +1,5 @@
 package com.patient.patient;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +45,8 @@ public class PatientController {
 		patientService.deletePatient(name);
 	}	
 	
+	
+	// Using to display JSON data in html webpage.
 	   @GetMapping("/Patients-html")
 	    public ModelAndView htmlView(Model model)
 	  {    

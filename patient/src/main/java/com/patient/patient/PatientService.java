@@ -34,13 +34,13 @@ public class PatientService {
 
 	public void updatePatient(String name, Patient Patient) {
 		for (int i=0; i<patient.size();i++) {
-			Patient t = patient .get(i);
+			Patient t = patient.get(i);
 			if (t.getName().equals(name)) {
 				patient.set(i, Patient);
 				return;
 			}
 		}
-		
+	
 	}
 
 	public void deletePatient(String name) {
