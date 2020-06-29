@@ -2,6 +2,8 @@ package com.patient.patient;
 
 public class Patient {
 
+	
+	  //Initialised the variables	
 	  private String name;
 	  private int age;
 	  private String date;
@@ -12,7 +14,8 @@ public class Patient {
 	public Patient() {
 
 	}  
-
+	
+	//Created a constructor for al the above variables
 	public Patient(String name, int age, String date, int temp, String symptoms) {
 		super();
 		this.name = name;
@@ -22,7 +25,7 @@ public class Patient {
 		this.symptoms = symptoms;
 	}
 	
-	
+	//Getters and Setters for all variables
 	public String getName() {
 		return name;
 	}

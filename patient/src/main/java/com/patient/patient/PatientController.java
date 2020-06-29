@@ -20,33 +20,38 @@ public class PatientController {
 	@Autowired
 	private PatientService patientService;
 	
+	//To get data of all the patients in JSON format
 	@RequestMapping("/Patients")
 	public List<Patient> getAllPatients() {
 		return patientService.getAllPatients();
 	}
 	
+	//To get data of a certain patient
 	@RequestMapping("/Patients/{name}")
 	public Patient getPatient(@PathVariable String name) {
 		return patientService.getPatient(name);
 	}
 	
+	//To add a data of a certain person
 	@RequestMapping(method=RequestMethod.POST,value="/Patients")
 	public void addPatient(@RequestBody Patient patient) {
 		patientService.addPatient(patient);
 	}
 	
+	//To update data of a certain patient
 	@RequestMapping(method=RequestMethod.PUT,value="/Patients/{name}")
 	public void updatePatient(@RequestBody Patient patient,@PathVariable String name) {
 		patientService.updatePatient(name,patient);
 	}
 	
+	//To delete a data of a patient
 	@RequestMapping(method=RequestMethod.DELETE,value="/Patients/{name}")
 	public void deletePatient(@PathVariable String name) {
 		patientService.deletePatient(name);
 	}	
 	
 	
-	// Using to display JSON data in html webpage.
+	// Using to display JSON data in html web page.
 	   @GetMapping("/Patients-html")
 	    public ModelAndView htmlView(Model model)
 	  {    
